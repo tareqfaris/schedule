@@ -1,0 +1,25 @@
+body{
+    background-color: #e7e6e1;
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+}
+.menu-item{
+   padding:5px;
+   text-align: center;
+   width: 100%;
+    color:#252525;
+    border-radius:20px;
+}
+.menu-item:hover{
+    background-color:#11698e;
+    color:#fff;
+    cursor: pointer;
+}
+.menu-item img{
+   width:80px;
+   height:80px;
+}
+a{
+    color:#000;
+    text-decoration: none;
+}
