@@ -3,7 +3,7 @@
 
     <!-- Portfolio Section-->
 
-    <section class="page-section portfolio" id="portfolio">
+    <section class="page-section portfolio" id="schedule">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">الجدول الاسبوعي</h2>
@@ -68,7 +68,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary m-2">إستعلام</button>
+                            <button type="submit" class="btn btn-warning m-2">إستعلام</button>
                         </form>
                     </div>
                     <div class="m-2 d-print-none">
@@ -137,7 +137,7 @@
         </div>
     </section>
 
-    <section class="page-section portfolio" id="portfolio">
+    <section class="page-section portfolio" id="depatments">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">اقسام الكلية</h2>
@@ -171,7 +171,7 @@
             </div>
         </div>
     </section>
-    <section class="page-section portfolio" id="portfolio">
+    <section class="page-section portfolio" id="news">
         <div class="container">
             <!-- Portfolio Section Heading-->
             <a href="" style="text-decoration:none"><h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">لوحة الاعلانات</h2></a>
@@ -202,7 +202,7 @@
         </div>
     </section>
     <!-- About Section-->
-    <section class="page-section bg-primary text-white mb-0" id="about">
+    {{-- <section class="page-section bg-primary text-white mb-0" id="about">
         <div class="container">
             <!-- About Section Heading-->
             <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
@@ -225,7 +225,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- Contact Section-->
     {{-- <section class="page-section" id="contact">
         <div class="container">
