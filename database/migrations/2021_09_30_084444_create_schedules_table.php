@@ -24,6 +24,7 @@ class CreateSchedulesTable extends Migration
             $table->string('time_end');
             $table->string('class_id');
             $table->string('class');
+            $table->integer('type')->nullable()->default(0);
             $table->timestamps();
         });
     }

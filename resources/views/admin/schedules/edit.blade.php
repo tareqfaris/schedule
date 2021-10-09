@@ -86,6 +86,13 @@
         </select>
       </div>
       <div class="form-group">
+        <label for="">نوع المحاضرة</label>
+        <select class="form-control" name="type" >
+          <option value="0" @if ($schedule->type ==0)  selected @endif>حضوري</option>
+          <option value="1" @if ($schedule->type ==1)  selected @endif>الكتروني</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label for="">وقت البدء</label>
         <input type="text"
           class="form-control timepicker"   name="time_start" id="" aria-describedby="helpId" placeholder="" value="{{$schedule->time_start}}">

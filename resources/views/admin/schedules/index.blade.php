@@ -95,6 +95,7 @@
                          <th>القسم</th>
                          <th>وقت البدء</th>
                          <th>وقت الانتهاء</th>
+                         <th>نوع المحاضرة</th>
                          <th class="d-print-none">إجراءات</th>
                      </tr>
                  </thead>
@@ -103,7 +104,7 @@
                      <tr>
                          <td scope="row">
                              @if (is_now($item->time_start,$item->time_end) && $day==$item->day)
-                             <i class="fas fa-circle-notch fa-spin text-danger"></i>
+                             <i class="fas fa-circle-notch fa-spin text-danger" title="بدأت حاليا"></i>
                              
                              @endif
                             
@@ -117,6 +118,13 @@
                          <td>{{@$item->department->name}}</td>
                          <td class="text-success">{{@$item->time_start}}</td>
                          <td class="text-danger">{{@$item->time_end}}</td>
+                         <td>
+                            @if ($item->type==0)
+                            <span>حضوري</span>
+                            @else 
+                            <span>الكتروني</span>
+                            @endif
+                        </td>
                          <td class="d-flex d-print-none">
                              <a href="{{route('schedules.edit',$item->id)}}"
                                  class="btn btn-warning btn-sm m-1">تعديل</a>

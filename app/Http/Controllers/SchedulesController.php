@@ -54,6 +54,7 @@ class SchedulesController extends Controller
             'material_id'=>$request->material_id,
             'section_id'=>$request->section_id,
             'time_start'=>$request->time_start,
+            'type'=>$request->type,
             'time_end'=>$request->time_end,
             'class_id'=>$request->class_id,
             'class'=>$request->class,
@@ -90,6 +91,7 @@ class SchedulesController extends Controller
             'time_end'=>$request->time_end,
             'class_id'=>$request->class_id,
             'class'=>$request->class,
+            'type'=>$request->type,
         ]);
         return redirect()->route('schedules.index');
       

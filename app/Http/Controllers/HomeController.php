@@ -9,13 +9,35 @@ use App\Models\Department;
 use Carbon\Carbon;
 class HomeController extends Controller{
 
-    public function index(){
-        $schedules=Schedule::query();
-       $departments=Department::get();
+    public function index(Request $request){
+        $departments=Department::get();
        $day=Carbon::now()->translatedFormat('N');
-       $schedules=$schedules->where('day',$day)->get();
+ 
        $articles=Article::orderby('id','desc')->where('status',1)->limit(3)->where('department_id',0)->get();
-       return view('index',compact('departments','schedules','articles'));
+       $schedules=Schedule::query();
+        $day=Carbon::now()->translatedFormat('N');
+        if ($request->has('day')) {
+           $day=$request->day;
+        }
+        if ($request->has('department_id') && $request->department_id !=0) {
+           $schedules->where('department_id',$request->department_id);
+        }
+        if ($request->has('section_id') && $request->section_id !=0) {
+           $schedules->where('section_id',$request->section_id);
+        }
+        if ($request->has('teacher_id') && $request->teacher_id !=0) {
+           $schedules->where('teacher_id',$request->teacher_id);
+        }
+        if ($request->has('material_id') && $request->material_id !=0) {
+           $schedules->where('material_id',$request->material_id);
+        }
+        $days=collect([]);
+      for ($i=0; $i < 7; $i++) { 
+          $days->put(Carbon::now()->subDays($i)->translatedFormat('N'),Carbon::now()->subDays($i)->translatedFormat('l'));
+      }
+
+      $schedules=$schedules->where('day',$day)->paginate(25)->appends($request->except('page'));
+       return view('index',compact('departments','schedules','articles','days','day'));
     }
 
     public function schedule(){

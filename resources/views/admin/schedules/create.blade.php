@@ -93,6 +93,13 @@
        </select>
      </div>
      <div class="form-group">
+      <label for="">نوع المحاضرة</label>
+      <select class="form-control" name="type" >
+        <option value="0">حضوري</option>
+        <option value="1">الكتروني</option>
+      </select>
+    </div>
+     <div class="form-group">
        <label for="">وقت البدء</label>
        <input type="text"
          class="form-control timepicker"   name="time_start" id="" aria-describedby="helpId" placeholder="">
